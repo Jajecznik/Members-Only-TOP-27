@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <script src="/scripts/script.js" defer></script>
+  <title>
+    <%= locals.title %>
+  </title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sign In</h1>
+
+    <% if (success && success.length> 0) { %>
+      <div class="flash success">
+        <%= success %>
+      </div>
+      <% } %>
+
+        <form action="/signin" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+
+          <div class="password-wrapper">
+            <input type="password" id="signin-password" name="password" placeholder="Password" required />
+            <span class="toggle-password eye-icon" data-target="signin-password">&#128065;</span>
+          </div>
+
+          <button type="submit">Log In</button>
+        </form>
+
+        <div class="link">
+          <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        </div>
+        <div class="link">
+          <p>Return to <b><a href="/">Home</a></b></p>
+        </div>
+  </div>
+</body>
+
+</html>

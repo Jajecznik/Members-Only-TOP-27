@@ -1,0 +1,13 @@
+<div id="becomeAdminModal" class="modal-wrapper">
+  <div class="modal-content">
+    <a href="/home">
+      <p class="close-modal" aria-label="Close modal">&times;</p>
+    </a>
+    <h2>Become an Admin</h2>
+    <p>To become an admin, enter secret password:</p>
+    <form action="/home/admin" method="POST">
+      <input type="password" name="secretPassword" placeholder="Secret password" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

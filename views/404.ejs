@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/styles.css">
+  <title>404 - Page Not Found</title>
+</head>
+
+<body>
+  <div class="not-found-container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist or has been moved.</p>
+
+    <% if (isLoggedIn) { %>
+      <a href="/home">Go to Home</a>
+      <% } else { %>
+        <a href="/">Go back to Welcome Page</a>
+        <% } %>
+  </div>
+</body>
+
+</html>

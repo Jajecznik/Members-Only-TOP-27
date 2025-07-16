@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <script src="/scripts/script.js" defer></script>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+
+    <form action="/signup" method="POST">
+      <input type="text" name="firstName" placeholder="First Name" required value="<%= data.firstName || '' %>" />
+      <% if (errors.firstName) { %>
+        <p class="error">
+          <%= errors.firstName %>
+        </p>
+        <% } %>
+
+          <input type="text" name="lastName" placeholder="Last Name" required value="<%= data.lastName || '' %>" />
+          <% if (errors.lastName) { %>
+            <p class="error">
+              <%= errors.lastName %>
+            </p>
+            <% } %>
+
+              <input type="text" name="username" placeholder="Username" required value="<%= data.username || '' %>" />
+              <% if (errors.username) { %>
+                <p class="error">
+                  <%= errors.username %>
+                </p>
+                <% } %>
+
+                  <input type="email" name="email" placeholder="Email" required value="<%= data.email || '' %>" />
+                  <% if (errors.email) { %>
+                    <p class="error">
+                      <%= errors.email %>
+                    </p>
+                    <% } %>
+
+                      <div class="password-wrapper">
+                        <input type="password" id="signup-password" name="password" placeholder="Password" required />
+                        <span class="toggle-password eye-icon" data-target="signup-password">&#128065;</span>
+                      </div>
+                      <% if (errors.password) { %>
+                        <p class="error">
+                          <%= errors.password %>
+                        </p>
+                        <% } %>
+
+                          <div class="password-wrapper">
+                            <input type="password" id="signup-confirmPassword" name="confirmPassword"
+                              placeholder="Confirm Password" required />
+                            <span class="toggle-password eye-icon" data-target="signup-confirmPassword">&#128065;</span>
+                          </div>
+                          <% if (errors.confirmPassword) { %>
+                            <p class="error">
+                              <%= errors.confirmPassword %>
+                            </p>
+                            <% } %>
+
+                              <button type="submit">Create Account</button>
+    </form>
+
+    <div class="link">
+      <p>Already have an account? <a href="/signin">Sign in</a></p>
+    </div>
+    <div class="link">
+      <p>Return to <b><a href="/">Home</a></b></p>
+    </div>
+  </div>
+</body>
+
+</html>
